@@ -1,0 +1,63 @@
+/* Contenedor flotante (La cápsula) */
+.floating-dock {
+  position: fixed;        /* Se queda fijo en la pantalla */
+  bottom: 30px;           /* Separado del suelo */
+  left: 50%;              /* Centrado horizontalmente... */
+  transform: translateX(-50%); /* ...ajuste exacto del centro */
+  
+  display: flex;
+  align-items: center;
+  gap: 5px;              /* Espacio entre botones */
+  padding: 5px 5px;
+  
+  /* EFECTO CRISTAL*/
+  background: rgba(5, 5, 36, 0.7); /*semitransparente */
+  backdrop-filter: blur(12px);     /* Difumina el fondo detrás */
+  border: 1px solid rgba(0, 255, 255, 0.1); /* Borde sutil cian */
+  border-radius: 50px;             /* Bordes redondos de cápsula */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+  
+  z-index: 1000; /* Para que flote encima de todo */
+}
+
+/* Estilo de los enlaces */
+a {
+  text-decoration: none;
+  color: #a0a0c0; /* Gris azulado apagado */
+  font-family: 'Montserrat', sans-serif; /* O tu fuente preferida */
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Iconos un poco más grandes */
+.icon {
+  font-size: 1.2rem;
+}
+
+/* Cuando pasas el ratón (Hover) o el enlace está Activo */
+a:hover, a.active {
+  background-color: rgba(0, 255, 255, 0.1); /* Fondo cian muy suave */
+  color: #00ffff; /* Texto cian neón */
+  border-radius: 51px;
+  transform: translateY(-3px); /* Pequeño saltito hacia arriba */
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.15); /* Resplandor */
+}
+
+/* (Opcional) Si quieres que el login destaque más */
+a.login-btn {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-left: 10px;
+}
+
+
+.icon img{
+    height: 60px;
+    width: 60px;
+    //filter: invert(1); /* Para que el icono se vea blanco, lo quito por ahora */
+    }

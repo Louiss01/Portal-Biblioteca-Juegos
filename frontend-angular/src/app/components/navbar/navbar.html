@@ -1,21 +1,9 @@
-<nav style="background-color: #050524; padding: 1rem;">
-  <!-- Enlace a la Home -->
-  <a routerLink="/home" style="color: white; margin-right: 15px; text-decoration: none;">
-    🏠 Inicio
+<div class="floating-dock">
+
+  
+  <!-- Home -->
+  <a routerLink="/home" (click)="irArriba()" class="home-link">
+    <span class="icon"><img src="/assets/icon-home2-removed.png" alt="Home Icon"></span> 
   </a>
 
-  <!-- Enlace al Login -->
-  <a routerLink="/login" style="color: white; margin-right: 15px; text-decoration: none;">
-    🔒 Iniciar Sesión 
-  </a>
-
-    <!-- Enlace al Conocenos -->
-  <a routerLink="/conocenos" style="color: white; margin-right: 15px; text-decoration: none;">
-    ℹ️ Conócenos 
-  </a>
-
-    <!-- Enlace al Faq-->
-  <a routerLink="/faq" style="color: white; margin-right: 15px; text-decoration: none;">
-    ❓ FAQ 
-  </a>
-</nav>
+</div>

@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+  background-color: #050524;
+}
+
+/* Invisible al iniciar */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(50px); /* Desplazado hacia abajo */
+  transition: all 1s ease-out; /* Transición suave */
+  will-change: opacity, transform; /* Optimización */
+}
+
+/*Estado final al ir bajando*/
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0); /* Vuelve a su posición original */
+}

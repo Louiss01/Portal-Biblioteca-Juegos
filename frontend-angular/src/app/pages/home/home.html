@@ -1,12 +1,56 @@
+<!-- SECCIÓN 1: HERO -->
+<section class="hero reveal-on-scroll">
+  <!-- El vídeo de fondo (en bucle, sin sonido, autoplay) -->
+  <video #bgVideo autoplay playsinline muted loop class="video-fondo">
+    <source src="assets/video-demo.mp4" type="video/mp4">
+  </video>
+  
+  <!-- La capa oscura para que se lea el texto -->
+  <div class="overlay"></div>
 
-<div class="content">
-  <h1>Bienvenido a la Biblioteca de Juegos!</h1>
+  <div class="hero-content reveal-on-scroll">
+    <h1>Domina tu Biblioteca</h1>
+    <p>Conecta tu cuenta de Steam y descubre el verdadero potencial de tus juegos.</p>
+    <button class="btn-cta" routerLink="/login">¡EMPEZAR AHORA!</button>
+  </div>
+</section>
 
-  <p>Explora nuestra colección de juegos y encuentra tu próxima aventura.</p>
+<!-- SECCIÓN 2: QUIÉNES SOMOS -->
+<section class="quienes-somos reveal-on-scroll">
+  <h2>El Equipo Detrás del Código</h2>
+ 
+  <!-- Contenedor de ambas tarjetas -->
+  <div class="equipo-grid reveal-on-scroll">
 
-  <!-- Este botón activa la función addOne() de tu home.ts -->
-  <button (click)="addOne()">¡Cliquéame si te aburres!</button>
+    <!-- Tarjeta Louis -->
+    <div class="miembro">
+      <img src="assets/louis.gif" alt="gif de Louis">
+      <h3>Louis</h3>
+      <p class="rol">Frontend Wizard</p>
+      <p>Apasionado de Angular y de crear experiencias visuales únicas.</p>
+    </div>
+    
 
-  <!-- Aquí mostramos la variable 'number' que vamos sumando -->
-  <p>Número de clicks: {{ number }}</p>
-</div>
+    <!-- Tarjeta Arsen -->
+    <div class="miembro">
+      <img src="assets/arsen.gif" alt="Foto de Arsen">
+      <h3>Arsen</h3>
+      <p class="rol">Backend Master</p>
+      <p>El cerebro que conecta los cables y hace que <b>(casi)</b> todo funcione.</p>
+    </div>
+  </div>
+  </section>
+  
+<section class="proyecto-mision reveal-on-scroll">
+  <div class="proyecto-info">
+    <h3>Nuestro Objetivo</h3>
+    <p>¡Hola!, somos Louis y Arsen, dos desarrolladores apasionados por crear soluciones innovadoras para los amantes de los videojuegos. Nuestro objetivo es facilitar tu control sobre tu biblioteca de steam para que puedas terminar esos juegos que se resisten, sean por pereza o dificultad. ¡La mejor forma de ganar es conocer lo que está en tu mano!</p>
+  </div>
+</section>
+
+<!-- SECCIÓN 3: LLAMADA FINAL -->
+<section class="cta-final reveal-on-scroll">
+  <h1>¡Únete y descubre qué juego empezar!</h1>
+  <h2>¿Listo para subir de nivel?</h2>
+  <button class="btn-cta grande" routerLink="/login">¡CONÉCTATE!</button>
+</section>
