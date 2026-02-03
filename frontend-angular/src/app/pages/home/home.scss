@@ -8,7 +8,7 @@ section {
 .hero {
   font-family: 'montserrat', 'Segoe UI', sans-serif;
   position: relative;
-  height: 90vh; /* Ocupa casi toda la pantalla */
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +36,7 @@ section {
   }
 
   h1 {
+    font-family: 'montserrat', 'Segoe UI', sans-serif;
     font-size: 4rem;
     font-weight: 800;
     text-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -72,17 +73,20 @@ section {
   &.grande {
     font-size: 2rem;
     padding: 20px 60px;
+    margin-bottom: 40px;
   }
 }
 
 /* --- SECCIÓN QUIÉNES SOMOS --- */
 .quienes-somos {
+  font-family: 'montserrat', 'Segoe UI', sans-serif;
   background: #f1f2f6;
   color: #333;
 
   h2 { margin-bottom: 50px; font-size: 2.5rem; }
 
   .equipo-grid {
+    font-family: 'montserrat', 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -114,6 +118,11 @@ section {
       text-transform: uppercase;
       font-size: 0.9rem;
     }
+
+    h3 {
+      color: #9e5e15;
+      margin-bottom: 10px;
+
   }
 
   .proyecto-info {
@@ -128,11 +137,44 @@ section {
 
 html {
   scroll-behavior: smooth;
-}
+}}
 
+/* --- SECCIÓN PROYECTO Y MISIÓN --- */
+.proyecto-mision {
+    background: rgba(5, 5, 36, 0.7); /*semitransparente */
+   color: #e0e0e0;      /* Texto verde oscuro */
+
+  .proyecto-info {
+    font-family: 'montserrat', 'Segoe UI', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  }
+} 
 /* --- SECCIÓN FINAL --- */
 .cta-final {
-  background: #2f3542;
+  background: rgba(5, 5, 36, 0.8); /*semitransparente */
   color: white;
-}
+  
 
+  h1 {
+    font-family: 'montserrat', 'Segoe UI', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #0e97d6;
+  }
+
+  h2 {
+    font-family: 'montserrat', 'Segoe UI', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    color: #0e97d6;
+  }
+
+}
