@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, QueryList, viewChild } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,53 +6,33 @@ import { Component } from '@angular/core';
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {
-  number: number = 0;
-  count: number = 0;
-  timer: any; 
-  mensajeMostrado: boolean = false; 
+export class Home implements AfterViewInit{
 
-  addOne() {
-    console.log('¡Botón clickeado!');
-    this.number++;
+ @ViewChild('bgVideo') videoElement!: ElementRef<HTMLVideoElement>;
 
-    if (!this.mensajeMostrado) {
-      if (this.timer) {
-        clearTimeout(this.timer);
+//Ref video de fondo
+ngAfterViewInit() {
+  const video = this.videoElement.nativeElement;
+
+  //Aseguramos que está mudo, sino no funcionará el autoplay en muchos navegadores)
+  video.muted = true;
+  
+  //Intentamos reproducir
+  video.play().catch(error => {
+    console.warn('Autoplay bloqueado por el navegador:', error);
+  });
+
+  //Vigilante de scroll para animaciones
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { //Si entra en pantalla, añade "visible" es decir, te lo muestra
+        entry.target.classList.add('visible');
+      } else {
+        entry.target.classList.remove('visible');
       }
+    });
+  }, { threshold: 0.1 }); // Cuando el 10% del elemento es visible, empieza a mostrarse
 
-      this.timer = setTimeout(() => {
-        alert('¿Te has cansado? Patético humano.');
-        this.mensajeMostrado = true; 
-      }, 10000); 
-    }
-
-    if (this.number === 10) {
-      alert('No iba en serio... ¿o sí?');
-    }
-    if (this.number === 20) {
-      alert('¡Vaya, te gusta hacer clics!');
-    }
-    if (this.number === 30) {
-      alert('¡Eso es mucha dedicación!');
-    }
-    if (this.number === 40) {
-      alert('¿Estás intentando romper el récord mundial de clics?');
-    }
-    if (this.number === 50) {
-      alert('¡Increíble! ¡50 clics! ¿Qué sigue, 100?');
-    }
-    if (this.number === 100) {
-      alert('¡Felicidades! ¡Has alcanzado los 100 clics! Eres un campeón del clic.');
-    }
-    if (this.number > 200) {
-      alert('¡Wow! ¡Más de 200 clics! ¿Estás seguro de que no tienes otra cosa que hacer?');
-    }
-    if (this.number > 500) {
-      alert('¡Increíble! ¡Más de 500 clics! ¿Estás tratando de comunicarte con los extraterrestres a través de clics?');
-    }
-    if (this.number > 1000) {
-      alert('¡Asombroso! ¡Más de 1000 clics! ¿Estás intentando romper el internet con tus clics?');
-    }
-  }
-}
+  const hiddenElements = document.querySelectorAll('.reveal-on-scroll'); //Selecciona todos los elementos con esta clase
+  hiddenElements.forEach(el => observer.observe(el)); //Y los observa
+}}

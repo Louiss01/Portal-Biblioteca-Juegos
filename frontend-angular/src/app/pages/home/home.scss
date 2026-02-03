@@ -1,0 +1,135 @@
+/* --- ESTILOS GENERALES --- */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* --- SECCIÓN HERO --- */
+.hero {
+  position: relative;
+  height: 90vh; /* Ocupa casi toda la pantalla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+
+  /* El vídeo de fondo */
+  .video-fondo {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para que cubra todo sin deformarse */
+    z-index: -2;
+    filter: blur(4px); /* EFECTO DIFUMINADO */
+  }
+
+  /* Capa oscura encima del vídeo */
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Negro al 60% de transparencia */
+    z-index: -1;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+}
+
+/* --- BOTONES --- */
+.btn-cta {
+  background: #ff4757; /* Un rojo potente tipo gamer */
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    transform: scale(1.05); /* Efecto zoom al pasar el ratón */
+    box-shadow: 0 0 20px rgba(255, 71, 87, 0.6);
+  }
+
+  &.grande {
+    font-size: 2rem;
+    padding: 20px 60px;
+  }
+}
+
+/* --- SECCIÓN QUIÉNES SOMOS --- */
+.quienes-somos {
+  background: #f1f2f6;
+  color: #333;
+
+  h2 { margin-bottom: 50px; font-size: 2.5rem; }
+
+  .equipo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+
+
+.miembro {
+  background: rgba(10, 40, 80, 0.18); 
+  padding: 30px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%; /* Hacer que la foto sea redonda */
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 4px solid #e06b3d;
+    }
+
+    .rol {
+      color: #a36218;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+  }
+
+  .proyecto-info {
+    margin-top: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- SECCIÓN FINAL --- */
+.cta-final {
+  background: #2f3542;
+  color: white;
+}
+
