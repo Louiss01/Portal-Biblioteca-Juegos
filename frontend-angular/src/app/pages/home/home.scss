@@ -17,6 +17,7 @@ section {
 
   /* El vídeo de fondo */
   .video-fondo {
+    border-radius: 20px;
     position: absolute;
     top: 0; left: 0;
     width: 100%;
@@ -79,14 +80,34 @@ section {
 
 /* --- SECCIÓN QUIÉNES SOMOS --- */
 .quienes-somos {
-  font-family: 'montserrat', 'Segoe UI', sans-serif;
-  background: #f1f2f6;
-  color: #333;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  
+  /* FONDO PRINCIPAL DE LA SECCIÓN */
+  background: rgba(22, 22, 99, 0.85); 
+  backdrop-filter: blur(10px); /* Efecto cristal */
+  color: #e2d1d1; /* Texto claro */
+  
+  /* Espaciado y bordes */
+  border-radius: 20px;
+  padding: 60px 40px;
+  margin: 60px auto 0 auto;
+  max-width: 1200px; /* Para que no se estire infinito en pantallas grandes */
+  
+  /* Sombra sutil para separarlo del fondo */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 
-  h2 { margin-bottom: 50px; font-size: 2.5rem; }
+  /* TÍTULO PRINCIPAL */
+  h2 { 
+    margin-bottom: 80px; 
+    font-size: 2.8rem;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    font-weight: 800;
+  }
 
+  /* GRID DE TARJETAS Louis y Arsen */
   .equipo-grid {
-    font-family: 'montserrat', 'Segoe UI', sans-serif;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -94,55 +115,84 @@ section {
     margin-top: 20px;
   }
 
-
-
-.miembro {
-  background: rgba(10, 40, 80, 0.18); 
-  padding: 30px;
+  /* TARJETA INDIVIDUAL */
+  .miembro {
+    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro para resaltar sobre el azul */
+    padding: 30px;
     border-radius: 20px;
     width: 300px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px); /* Pequeña animación al pasar el ratón */
+    }
 
     img {
       width: 120px;
       height: 120px;
-      border-radius: 50%; /* Hacer que la foto sea redonda */
+      border-radius: 50%;
       object-fit: cover;
       margin-bottom: 20px;
       border: 4px solid #e06b3d;
     }
 
     .rol {
-      color: #a36218;
+      color: #ff9f43; /* Naranja más brillante para leerse mejor */
       font-weight: bold;
       text-transform: uppercase;
       font-size: 0.9rem;
+      letter-spacing: 1px;
     }
 
     h3 {
-      color: #9e5e15;
+      color: #fff;
       margin-bottom: 10px;
-
+      font-size: 1.5rem;
+    }
+    
+    p {
+      color: #ccc; /* Texto descriptivo gris claro */
+    }
   }
 
+  /* BLOQUE DE TEXTO "NUESTRO OBJETIVO" */
   .proyecto-info {
-    margin-top: 60px;
+    margin-top: 80px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    
+    /* Estilo caja destacada */
+    background: rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+
+    h3 {
+      color: #00bef3; /* Cian brillante */
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    p {
+      color: #f1f2f6; /* Texto casi blanco */
+    }
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}}
-
 /* --- SECCIÓN PROYECTO Y MISIÓN --- */
 .proyecto-mision {
-    background: rgba(5, 5, 36, 0.7); /*semitransparente */
-   color: #e0e0e0;      /* Texto verde oscuro */
+    border-radius: 20px;
+    padding: 40px;
+    margin: 60px auto 0 auto;
+    background: rgba(22, 22, 99, 0.9); /*semitransparente */
+   color: #e0e0e0;      /* texto verde oscuro */
 
   .proyecto-info {
     font-family: 'montserrat', 'Segoe UI', sans-serif;
@@ -153,7 +203,7 @@ html {
 
     h3 {
       font-size: 2rem;
-      margin-bottom: 20px;
+      margin-bottom: 50px;
     }
   }
 } 
