@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, QueryList, viewChild } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, QueryList, viewChild, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,7 @@ export class Home implements AfterViewInit{
 ngAfterViewInit() {
   const video = this.videoElement.nativeElement;
 
-  //Aseguramos que está mudo, sino no funcionará el autoplay en muchos navegadores)
+  //Aseguramos que está mudo, sino no funcionará el autoplay en muchos navegadores
   video.muted = true;
   
   //Intentamos reproducir
@@ -35,4 +35,9 @@ ngAfterViewInit() {
 
   const hiddenElements = document.querySelectorAll('.reveal-on-scroll'); //Selecciona todos los elementos con esta clase
   hiddenElements.forEach(el => observer.observe(el)); //Y los observa
-}}
+}
+
+
+}
+
+

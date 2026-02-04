@@ -117,7 +117,7 @@ section {
 
   /* TARJETA INDIVIDUAL */
   .miembro {
-    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro para resaltar sobre el azul */
+    background: rgba(0, 0, 0, 0.3); 
     padding: 30px;
     border-radius: 20px;
     width: 300px;
@@ -139,7 +139,7 @@ section {
     }
 
     .rol {
-      color: #ff9f43; /* Naranja más brillante para leerse mejor */
+      color: #ff9f43; 
       font-weight: bold;
       text-transform: uppercase;
       font-size: 0.9rem;
@@ -153,7 +153,7 @@ section {
     }
     
     p {
-      color: #ccc; /* Texto descriptivo gris claro */
+      color: #ccc; 
     }
   }
 
@@ -173,7 +173,7 @@ section {
     border: 1px solid rgba(255,255,255,0.1);
 
     h3 {
-      color: #00bef3; /* Cian brillante */
+      color: #00bef3;
       font-size: 2rem;
       margin-bottom: 20px;
       font-weight: 700;
@@ -181,7 +181,7 @@ section {
     }
     
     p {
-      color: #f1f2f6; /* Texto casi blanco */
+      color: #f1f2f6; 
     }
   }
 }
@@ -209,22 +209,163 @@ section {
 } 
 /* --- SECCIÓN FINAL --- */
 .cta-final {
-  background: rgba(5, 5, 36, 0.8); /*semitransparente */
+  background: rgba(5, 5, 36, 0.8);
   color: white;
-  
+  padding: 80px 20px; /* Le faltaba padding */
 
   h1 {
-    font-family: 'montserrat', 'Segoe UI', sans-serif;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
     font-size: 3rem;
     margin-bottom: 20px;
     color: #0e97d6;
   }
 
   h2 {
-    font-family: 'montserrat', 'Segoe UI', sans-serif;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
     font-size: 1.8rem;
     margin-bottom: 40px;
     color: #0e97d6;
   }
+} 
 
+/* --- CARRUSEL ORBITAL DE STEAM --- */
+.steam-orbit {
+  padding: 100px 20px;
+  background: radial-gradient(circle, #0f0f2e 0%, #050510 100%);
+  border-radius: 30px;
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  h2 {
+    font-size: 2.6rem;
+    color: #fff;
+    margin-bottom: 60px;
+    text-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  
+  h3 {
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 80px;
+    text-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.orbit-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  /* El contenedor gira a la derecha */
+  animation: spin-right 20s linear infinite;
+}
+
+/* --- LOGO CENTRAL --- */
+.orbit-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 120px; height: 120px;
+  margin: -60px 0 0 -60px;
+  z-index: 10;
+  /* Gira a la izquierda para parecer quieto */
+  animation: spin-left 20s linear infinite;
+
+  img {
+    width: 100%;
+    filter: drop-shadow(0 0 20px #00c6ff);
+  }
+}
+
+/* --- ITEMS DEL CARRUSEL --- */
+.orbit-item {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 80px; height: 80px;
+  margin: -40px 0 0 -40px;
+}
+
+.orbit-center img {
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 80%; /* Redondo */
+  object-fit: cover;
+  border: 3px solid rgba(0, 198, 255, 0.7);
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
+}
+
+/* Posicionamos los items en círculo */
+.orbit-item:nth-child(2) { transform: rotate(0deg)   translateX(200px); }
+.orbit-item:nth-child(3) { transform: rotate(45deg)  translateX(200px); }
+.orbit-item:nth-child(4) { transform: rotate(90deg)  translateX(200px); }
+.orbit-item:nth-child(5) { transform: rotate(135deg) translateX(200px); }
+.orbit-item:nth-child(6) { transform: rotate(180deg) translateX(200px); }
+.orbit-item:nth-child(7) { transform: rotate(225deg) translateX(200px); }
+.orbit-item:nth-child(8) { transform: rotate(270deg) translateX(200px); }
+.orbit-item:nth-child(9) { transform: rotate(315deg) translateX(200px); }
+
+/* --- IMAGEN DENTRO --- */
+.orbit-item img {
+  width: 100%; height: 100%;
+  border-radius: 50%; /* Redondos */
+  object-fit: cover;
+  border: 2px solid rgba(0, 198, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.3);
+
+  &:hover {
+    box-shadow: 0 0 25px #00c6ff, 0 0 40px #00c6ff;
+    transform: scale(1.5);
+    transition: all 0.4s ease;
+  }
+
+  /*Usamos una animación específica para cada elemento que empieza en su ángulo negativo 
+  y da una vuelta completa (-360deg) relativa a ese ángulo. */
+}
+
+
+
+
+/* Asignamos una animación única a cada imagen para que empiece recta */
+.orbit-item:nth-child(2) img { animation: spin-0 20s linear infinite; }
+.orbit-item:nth-child(3) img { animation: spin-45 20s linear infinite; }
+.orbit-item:nth-child(4) img { animation: spin-90 20s linear infinite; }
+.orbit-item:nth-child(5) img { animation: spin-135 20s linear infinite; }
+.orbit-item:nth-child(6) img { animation: spin-180 20s linear infinite; }
+.orbit-item:nth-child(7) img { animation: spin-225 20s linear infinite; }
+.orbit-item:nth-child(8) img { animation: spin-270 20s linear infinite; }
+.orbit-item:nth-child(9) img { animation: spin-315 20s linear infinite; }
+
+/* DEFINIMOS LAS ANIMACIONES CALCULADAS */
+/* Cada una empieza en el ángulo negativo (para estar recta) y resta 360 grados */
+
+@keyframes spin-right { 100% { transform: rotate(360deg); } }
+@keyframes spin-left  { 100% { transform: rotate(-360deg); } }
+
+@keyframes spin-0   { from { transform: rotate(0deg); }   to { transform: rotate(-360deg); } }
+@keyframes spin-45  { from { transform: rotate(-45deg); }  to { transform: rotate(-405deg); } } /* -45 - 360 */
+@keyframes spin-90  { from { transform: rotate(-90deg); }  to { transform: rotate(-450deg); } }
+@keyframes spin-135 { from { transform: rotate(-135deg); } to { transform: rotate(-495deg); } }
+@keyframes spin-180 { from { transform: rotate(-180deg); } to { transform: rotate(-540deg); } }
+@keyframes spin-225 { from { transform: rotate(-225deg); } to { transform: rotate(-585deg); } }
+@keyframes spin-270 { from { transform: rotate(-270deg); } to { transform: rotate(-630deg); } }
+@keyframes spin-315 { from { transform: rotate(-315deg); } to { transform: rotate(-675deg); } }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .orbit-container { width: 300px; height: 300px; }
+  
+  .orbit-item:nth-child(2) { transform: rotate(0deg)   translateX(110px); }
+  .orbit-item:nth-child(3) { transform: rotate(45deg)  translateX(110px); }
+  .orbit-item:nth-child(4) { transform: rotate(90deg)  translateX(110px); }
+  .orbit-item:nth-child(5) { transform: rotate(135deg) translateX(110px); }
+  .orbit-item:nth-child(6) { transform: rotate(180deg) translateX(110px); }
+  .orbit-item:nth-child(7) { transform: rotate(225deg) translateX(110px); }
+  .orbit-item:nth-child(8) { transform: rotate(270deg) translateX(110px); }
+  .orbit-item:nth-child(9) { transform: rotate(315deg) translateX(110px); }
+
+  .orbit-item { width: 50px; height: 50px; margin: -25px 0 0 -25px; }
 }
