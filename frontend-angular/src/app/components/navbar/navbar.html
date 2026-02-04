@@ -6,4 +6,19 @@
     <span class="icon"><img src="/assets/icon-home2-removed.png" alt="Home Icon"></span> 
   </a>
 
+
+</div>
+
+
+<!-- NUEVA: PILA DE ENERGÍA FLOTANTE (DERECHA) -->
+<div class="energy-bar-container">
+
+  <div class="energy-icon" [class.charged]="scrollPercentage > 99">
+    <img src="/assets/steam-icon.png" alt="Steam Icon">
+  
+  </div>
+
+  <div class="energy-shell">
+    <div class="energy-fill" [style.height.%]="scrollPercentage"></div>
+  </div>
 </div>
