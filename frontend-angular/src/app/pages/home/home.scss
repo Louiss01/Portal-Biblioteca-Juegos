@@ -183,16 +183,21 @@ section {
     p {
       color: #f1f2f6; 
     }
+
+
   }
+  
 }
 
 /* --- SECCIÓN PROYECTO Y MISIÓN --- */
 .proyecto-mision {
     border-radius: 20px;
-    padding: 40px;
-    margin: 60px auto 0 auto;
-    background: rgba(22, 22, 99, 0.9); /*semitransparente */
-   color: #e0e0e0;      /* texto verde oscuro */
+    color: #e0e0e0;
+    margin-top: 50px;
+  
+  /* Estilo caja destacada */
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255,255,255,0.1);
 
   .proyecto-info {
     font-family: 'montserrat', 'Segoe UI', sans-serif;
@@ -206,6 +211,15 @@ section {
       margin-bottom: 50px;
     }
   }
+   img {
+      width: 800px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      margin-top: 40px;
+      border: 4px solid #e06b3d;
+    }
 } 
 /* --- SECCIÓN FINAL --- */
 .cta-final {
@@ -238,12 +252,60 @@ section {
   position: relative;
   overflow: hidden;
 
+   /* Contenedor de fondos */
+  .orbit-backgrounds {
+    position: absolute;
+    inset: 0;            /* ocupa toda la sección */
+    pointer-events: none;
+    z-index: 0;          /* por detrás del resto */
+  }
+
+  /* Las imágenes dentro de orbit-backgrounds */
+  .orbit-backgrounds .bg-left{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    opacity: 0.25;
+    filter: blur(1px) drop-shadow(0 0 25px rgba(0,0,0,0.7));
+    right: 0;
+  }
+
+
+
+  .orbit-backgrounds .bg-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    opacity: 0.25;
+    filter: blur(1px) drop-shadow(0 0 25px rgba(0,0,0,0.7));
+    left: 0;
+  }
+
+}
+
+
+  h2,
+  .orbit-subtitle,
+  .orbit-container {
+    position: relative;
+    z-index: 1;
+    
+  }
+
+
   h2 {
-    font-size: 2.6rem;
-    color: #fff;
-    margin-bottom: 60px;
-    text-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    font-size: clamp(2.4rem, 3vw, 3.1rem);
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    color: #ffffff;
+    text-shadow:
+      0 0 18px rgba(0, 198, 255, 0.55),
+      0 8px 30px rgba(0, 0, 0, 0.8);
+    margin-bottom: 18px;
   }
 
   
@@ -254,7 +316,7 @@ section {
     text-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
     font-family: 'Montserrat', sans-serif;
   }
-}
+
 
 .orbit-container {
   position: relative;
@@ -370,40 +432,5 @@ section {
   .orbit-item { width: 50px; height: 50px; margin: -25px 0 0 -25px; }
 }
 
-.proyecto-mision {
-  margin-top: 80px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  
-  /* Estilo caja destacada */
-  background: rgba(0, 0, 0, 0.2);
-  padding: 40px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.1);
 
-  h3 {
-    color: #00bef3;
-    font-size: 2rem;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  
-  p {
-    color: #f1f2f6;
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 30px;
-  }
 
-img {
-      width: 800px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 4px solid #e06b3d;
-    }
-
-}
